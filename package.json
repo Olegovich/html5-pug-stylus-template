@@ -8,7 +8,8 @@
   "author": "Olegovich",
   "license": "ISC",
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "browser-sync": "^2.26.3",
