@@ -1,0 +1,29 @@
+doctype html
+html(prefix='og: https://ogp.me/ns#', dir='ltr', lang='ru')
+
+    include header/head
+
+    body.body
+        include header/header
+
+        main#main.main
+            .container
+                .image
+                    img(src='img/other/pc.jpg')
+
+                .image
+                    img(src='img/other/pc-2.jpg')
+
+                .image
+                    img(src='img/other/gray-bg.jpg')
+
+
+        include footer/footer
+
+        #back-top.back-top.back-top_hide
+
+        include footer/modals
+
+        // Libs and main.js
+        script(src='js/libs.min.js')
+        script(src='js/app.js')

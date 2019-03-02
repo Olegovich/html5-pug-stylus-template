@@ -1,0 +1,61 @@
+doctype html
+html(prefix='og: https://ogp.me/ns#', dir='ltr', lang='ru')
+
+    include header/head
+
+    body.body
+        include header/header
+
+        main#main.main
+            .container
+                // Case
+                - var count = 0
+                case count
+                    when 0
+                        - break
+                    when 1
+                        p a few count
+                    default
+                        p count: #{count}
+
+
+                // Code
+                ul.list
+                    - for (var x = 0; x < 5; x++)
+                        li item
+
+                ul.list
+                    - var list = ['1', '2', '3', '4', '5']
+                    each item in list
+                        li= item
+
+
+                // Unescaped Buffered Code
+                p!= 'This code is' + ' <strong>escaped</strong>!'
+
+
+                <!-- Comments test -->
+
+
+                // Conditionals
+                - var authorised = true
+                #user
+                    if authorised
+                        h2.blue Username
+                        p.description.
+                            Description,
+                            Description,
+                            Description
+                    else
+                        h2.red Username
+                        p.description User has no description
+
+        include footer/footer
+
+        #back-top.back-top.back-top_hide
+
+        include footer/modals
+
+        // Libs and main.js
+        script(src='js/libs.min.js')
+        script(src='js/app.js')

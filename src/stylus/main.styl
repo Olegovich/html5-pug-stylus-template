@@ -1,0 +1,41 @@
+.body
+  margin: 0
+  padding-right: 0 !important
+  position: relative
+  left: 0
+  font-family: 'Open Sans', sans-serif
+  font-size: 14px
+  &_mobile_closed
+    overflow: auto
+  &_mobile_opened
+    overflow: hidden
+
+a
+  color: #80b822
+  text-decoration: underline
+  &:hover, &:focus
+    color: #054465
+    text-decoration: none
+    outline: none
+
+h1
+  color: #000
+
+.image img
+  max-width: 100%
+  margin-top: 30px
+
+@import "header"
+
+
+
+/* Main content */
+.main
+  min-height: 800px
+  margin: 35px 0
+
+
+
+@import "footer"
+@import "static-elems"
+@import "media"

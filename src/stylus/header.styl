@@ -1,0 +1,259 @@
+@import "mixins"
+
+/* Header mobile */
+.mobile
+  &__overlay
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 99
+    cursor: pointer
+    background-color: rgba(0, 0, 0, 0.5)
+
+  &__container
+    display: flex
+    flex-direction: column
+    width: 260px
+    height: 100%
+    padding-bottom: 15px
+    position: fixed
+    top: 0
+    left: -260px
+    z-index: 100
+    background: #236E89
+    box-shadow: none
+    overflow: auto
+    transition: .3s
+    &_opened
+      left: 0
+      box-shadow: 3px 2px 6px 1px rgba(0,0,0,0.3)
+
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    min-height: 50px
+    background: #1C5A6F
+  &__header-title
+    padding-left: 15px
+    font-family: 'Montserrat', sans-serif
+    font-size: 18px
+    font-weight: 600
+    color: #fff
+  &__header-btn
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    font-size: 47px
+    line-height: 29px
+    color: #fff
+    background: transparent
+    outline: none
+    cursor: pointer
+    transition: .3s
+    &:hover, &:focus
+      background: #236E89
+
+  &__navbar
+    margin: 20px 0 5px
+
+  &__navbar-nav
+    margin: 0
+    & > li > a
+      padding: 13px 15px
+
+  &__nav-item
+    width: 100%
+    text-align: center
+
+  &__nav-link
+    font-family: 'Montserrat', sans-serif
+    font-size: 16px
+    font-weight: 600
+    text-decoration: none
+    color: #fff
+    background: transparent
+    transition: .3s
+    &:hover
+      color: #0A0A0A
+      background: #fff
+    &:after
+      display: none
+
+
+
+/* Header main */
+.header
+  display: block
+  position: relative
+  top: 0
+  background: #236E89
+  transition: (1s - 0.5)
+  //transition: (1s / 2)
+
+  &__inner-container
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    align-items: center
+    position: relative
+
+  &__logo-link
+    display: block
+    width: 230px
+    text-decoration: none
+    background: #fff
+    transition: .3s
+    &:hover
+      opacity: .8
+      text-decoration: none
+    &:focus
+      text-decoration: none
+  &__logo-img
+    width: 100%
+
+  /* Header nav */
+  &__navbar
+    position: relative
+
+  &__navbar-nav
+    display: flex
+    justify-content: center
+    margin-bottom: 0
+    list-style-type: none
+    & > li > a
+      padding: 25px 15px
+
+  &__nav-link
+    font-family: 'Montserrat', sans-serif
+    font-size: 14px
+    color: #fff
+    text-decoration: none
+    background: transparent
+    transition: .3s
+    &:hover, &:focus
+      color: #fff
+      background: none !important
+    &:after
+      opacity: 0
+      visibility: hidden
+      content: ''
+      display: block
+      width: 100%
+      height: 5px
+      position: absolute
+      left: 0
+      top: -5px
+      background: #fff
+      transition: .3s
+    &:hover:after
+      opacity: 1
+      visibility: visible
+      top: 0
+
+  /* Header call */
+  &__call
+    display: flex
+    align-items: center
+
+  &__call-container
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+
+  &__call-link
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+    font-family: 'Montserrat', sans-serif
+    text-decoration: none
+    outline: none
+    &hover, &:focus
+      text-decoration: none
+
+  &__call-operator
+    font-size: 16px
+    line-height: 15px
+    color: #fff
+
+  &__call-number
+    margin-left: 5px
+    font-size: 29px
+    font-weight: bold
+    line-height: 25px
+    color: #fff
+
+  &__call-btn
+    margin-top: 7px
+    padding: 0
+    font-family: 'Montserrat', sans-serif
+    font-size: 13px
+    color: #fff
+    background: transparent
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 1px solid #fff
+    outline: none
+    transition: .3s
+    &:hover
+      border-bottom: 1px solid transparent
+
+  /* Header mobile btn */
+  &__mobile-btn
+    display: none
+    flex-direction: column
+    justify-content: center
+    align-items: flex-end
+    position: relative
+    margin-left: 11px
+    width: 40px
+    height: 40px
+    cursor: pointer
+    outline: none
+
+  &__mobile-btn-bar
+    width: 36px
+    height: 3px
+    background: #fff
+    margin: 4px 0
+    transition: .4s
+    &_active:nth-child(1)
+      transform: rotate(-45deg) translate(-8px, 7px)
+
+    &_active:nth-child(2)
+      transform: translate(-15px, 0)
+      opacity: 0
+
+    &_active:nth-child(3)
+      transform: rotate(45deg) translate(-8px, -8px)
+
+
+
+  /* Sticky header */
+  &-sticky
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 100
+    width: 100%
+    padding: 0
+    background: rgba(15,20,8,.88)
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3)
+
+  &-offtop
+    top: -70px
+
+  &.header-sticky.header-offtop
+    top: 0
+
+  &-sticky .header__nav-link
+    padding: 20px 15px
+
+  &-sticky .header__nav-link:after
+    background: #fff

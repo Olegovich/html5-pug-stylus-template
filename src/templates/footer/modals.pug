@@ -1,0 +1,45 @@
+#call-modal.modal.fade.modal_standart(tabindex='-1', role='dialog', aria-labelledby='call-modal-label', aria-hidden='true')
+    .modal-dialog.modal__dialog(role='document')
+        .modal-content.modal__content
+            button.close.modal__close-btn(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+
+            form#call-modal-form.modal-form(method='post')
+                p#call-modal-label.modal-form__title Заказать звонок
+                input(name='type', type='hidden', value='call_form')
+                input.modal-form__input(name='name', type='text', required='required', placeholder='* Введите имя')
+                input.modal-form__input(name='phone', type='text', required='required', placeholder='* Введите телефон')
+                input.modal-form__submit-btn(type='submit', value='Получить консультацию')
+
+#consultation-modal.modal.fade.modal_standart(tabindex='-1', role='dialog', aria-labelledby='consultation-modal-label', aria-hidden='true')
+    .modal-dialog.modal__dialog(role='document')
+        .modal-content.modal__content
+            button.close.modal__close-btn(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+
+            form#consultation-modal-form.modal-form(method='post')
+                p#consultation-modal-label.modal-form__title Задать вопрос
+                input(name='type', type='hidden', value='consultation_form')
+                input.modal-form__input(name='name', type='text', required='required', placeholder='* Введите имя')
+                input.modal-form__input(name='phone', type='text', required='required', placeholder='* Введите телефон')
+                input.modal-form__input(name='email', type='text', placeholder='Введите email')
+                textarea.modal-form__textarea(name='message', placeholder='Введите сообщение')
+                input.modal-form__submit-btn(type='submit', value='Оправить')
+
+#success-modal.modal.fade.modal_success(tabindex='-1', role='dialog', aria-labelledby='success-modal-label', aria-hidden='true')
+    .modal-dialog.modal__dialog(role='document')
+        .modal-content.modal__content
+            button.close.modal__close-btn(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+
+            p#success-modal-label.modal__title Сообщение успешно отправлено!
+            p.modal__desc Мы свяжемся с Вами в ближайшее время
+
+#error-modal.modal.fade.modal_error(tabindex='-1', role='dialog', aria-labelledby='error-modal-label', aria-hidden='true')
+    .modal-dialog.modal__dialog(role='document')
+        .modal-content.modal__content
+            button.close.modal__close-btn(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+
+            p#error-modal-label.modal__title Произошла ошибка, сообщение не отправлено!
+            p.modal__desc Попробуйте повторить отправку еще раз

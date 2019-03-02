@@ -1,0 +1,118 @@
+Check for current node and npm versions
+node -v
+npm -v
+
+
+Install node.js
+https://nodejs.org/en/download/
+
+For gulp 3 - you can use the latest node versions
+For gulp 4 - use only node 10.15
+
+
+Uninstall node.js and npm:
+For macOS:
+1) sudo rm -rf /usr/local/{lib/node{,/.npm,_modules},bin,share/man}/{npm*,node*,man1/node*}
+sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node* /usr/local/lib/dtrace/node.d ~/.npm ~/.node-gyp
+2) go to /usr/local/lib and delete any node and node_modules
+3) go to /usr/local/include and delete any node and node_modules directory
+4) if you installed with brew install node, then run brew uninstall node in your terminal
+5) check your Home directory for any local or lib or include folders, and delete any node or node_modules from there
+6) go to /usr/local/bin and delete any node executable
+7) sudo rm -rf /opt/local/bin/node /opt/local/include/node /opt/local/lib/node_modules
+8) sudo rm -rf /usr/local/bin/npm /usr/local/share/man/man1/node.1 /usr/local/lib/dtrace/node.d
+
+https://stackoverflow.com/questions/11177954/how-do-i-completely-uninstall-node-js-and-reinstall-from-beginning-mac-os-x
+_______________________
+
+1. Сreate package.json:
+npm init
+
+
+2. Install gulp globally, if it has not installed yet (for using terminal commands like: gulp <task>):
+npm i -g gulp
+
+install with needed version:
+npm i -g gulp@3.9.1
+
+If gulp has already installed globally and you have some conflicts - uninstall gulp globally and then install it globally again:
+npm uninstall -g gulp
+
+For macOS:
+sudo rm -rf /usr/local/share/man/man1/gulp.1
+
+https://www.reddit.com/r/webdev/comments/82ijjj/problem_installing_gulp/
+
+
+npm i -g gulp
+
+
+3. Install gulp locally (for using require('gulp') in config file: gulpfile.js):
+npm i gulp
+
+with adding in dependencies in package.son
+npm i gulp -S
+
+
+4. Install plugins
+npm i -D browser-sync del gulp-concat gulp-debug gulp-if gulp-order gulp-sass gulp-sourcemaps   
+
+Shortcut install:
+npm i gulp-sass -S (-S, --save: package will be added in your dependencies)
+npm i gulp-sass -D (-D, --save-dev: package will be added in your devDependencies)
+
+Shortcut uninstall:
+npm uninstall gulp-sass -S (-S, --save: package will be removed from your dependencies)
+npm uninstall gulp-sass -D (-D, --save-dev: package will be removed from your devDependencies)
+
+
+5. Install Bower globally
+npm install -g bower
+
+
+6. Create a bower.json
+bower init
+
+
+If error in windows 10 git bash:
+Additional error details:
+Note that you can manually force an interactive shell with --config.interactive
+
+
+There is an issue: do this command from windows default terminal (win+r -> cmd) from project's folder
+bower init
+
+
+7. Installs the project dependencies listed in bower.json
+bower install
+
+
+8. Install / Uninstall packages
+
+# install package to folder bower_components 
+bower install <package>
+
+# install package and add it to bower.json dependencies
+bower install <package> -S
+
+# install package and add it to bower.json devDependencies
+bower install <package> -D
+
+# uninstall packages and remove from bower.json dependencies or devDependencies
+bower uninstall <package> -S
+bower uninstall <package> -D
+
+
+9. Run gulp (with default task):
+gulp
+
+
+10. Build production (with task build):
+gulp build
+
+Check if is production build (we can use any different word, except "development") (for example: don't show source-maps in production build):
+NODE_ENV=production gulp build
+
+
+11. Smart mixins for writing BEM in Pug
+https://github.com/kizu/bemto#install--use

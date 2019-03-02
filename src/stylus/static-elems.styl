@@ -1,0 +1,298 @@
+// Forms, modals, preloader, back-top button
+
+/* Forms */
+.form
+  &__input
+    width: 220px
+    margin: 0 7.5px
+    padding: 8px 15px
+    font-family: 'Montserrat', sans-serif
+    font-size: 16px
+    text-align: center
+    text-decoration: none
+    color: #333
+    background: #fff
+    border: none
+    outline: none
+    box-shadow: inset 3px 3px 5px 0 rgba(0,0,0,0.15)
+    transition: .3s
+    &:focus
+      box-shadow: none
+
+  &::-webkit-input-placeholder
+    color: #8f8f8f
+    line-height: initial
+
+  &__submit-btn
+    width: 280px
+    margin: 0 7.5px
+    padding: 7px 15px 10px
+    font-size: 17px
+    font-weight: 700
+    text-align: center
+    text-decoration: none
+    line-height: 1
+    color: #fff
+    background: #236E89
+    border: 2px solid #236E89
+    outline: none
+    transition: .5s
+
+  &:hover, &:focus
+    text-decoration: none
+    color: #236E89
+    background: transparent
+
+
+
+/* Modals */
+.modal 
+  padding: 0 !important
+  text-align: center
+
+  &:before
+    content: ''
+    display: inline-block
+    height: 100%
+    margin-right: 0 /* Adjusts for spacing */
+    vertical-align: middle
+
+  &__dialog
+    display: inline-block
+    width: 450px
+    margin: 15px
+    text-align: left
+    vertical-align: middle
+
+  &__content
+    padding: 35px 60px 40px 60px
+    border-radius: 0
+    background-color: #f3f4f6
+
+  &__close-btn
+    opacity: 1
+    position: absolute
+    top: 0
+    right: 0
+    font-size: 47px
+    font-weight: 400
+    line-height: 29px
+    text-shadow: none
+    color: #383838
+    background: transparent
+    outline: none
+    transition: .3s
+    &:hover
+      opacity: 1
+      color: #236E89
+
+  & &__close-btn
+    padding: 10px
+
+  &__title
+    margin-bottom: 0
+    font-family: 'Montserrat', sans-serif
+    font-size: 18px
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+
+  &__desc
+    margin-top: 15px
+    margin-bottom: 0
+    padding: 0 10px
+    font-family: 'Montserrat', sans-serif
+    font-size: 18px
+    text-align: center
+    line-height: 22px
+    color: #8f8f8f
+
+  & .preloader
+    display: none
+    opacity: 0
+    position: absolute
+    bottom: 8px
+    left: 50%
+    margin-left: -32px
+
+  &_success &__content, &_error &__content
+    padding: 34px 60px 34px 60px
+
+
+
+/* Modal forms */
+.modal-form
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  &__title
+    margin-bottom: 8px
+    padding: 0 25px
+    font-family: 'Montserrat', sans-serif
+    font-size: 18px
+    font-weight: 700
+    text-align: center
+    text-transform: uppercase
+    color: #383838
+
+  &__input
+    width: 300px
+    margin-top: 15px
+    padding: 8px 38px
+    font-family: 'Montserrat', sans-serif
+    font-size: 14px
+    text-align: center
+    text-decoration: none
+    color: #333
+    background: transparent
+    border-top: none
+    border-left: none
+    border-right: none
+    border-bottom: 1px solid #acabab
+    outline: none
+    box-shadow: none
+    transition: .3s
+    &::-webkit-input-placeholder
+      transition: .3s
+    &:focus::-webkit-input-placeholder
+      opacity: 0
+
+  &__textarea
+    width: 300px
+    margin-top: 15px
+    padding: 5px 38px 0
+    font-family: 'Montserrat', sans-serif
+    font-size: 14px
+    text-align: center
+    text-decoration: none
+    line-height: 21px
+    color: #333
+    background: transparent
+    border: 1px solid transparent
+    border-bottom: 1px solid #acabab
+    border-radius: 0
+    outline: none
+    box-shadow: none
+    transition: .5s
+    &::-webkit-input-placeholder
+      transition: .3s
+    &:focus::-webkit-input-placeholder
+      opacity: 0
+
+  &__submit-btn
+    display: block
+    width: 300px
+    margin-top: 30px
+    padding: 12px 29px
+    font-size: 16px
+    font-weight: 700
+    text-align: center
+    text-decoration: none
+    line-height: 1
+    color: #fff
+    background: #236E89
+    border: 2px solid #236E89
+    outline: none
+    box-shadow: 3px 3px 0 0 rgba(0,0,0,0.18)
+    transition: .15s
+    &:active
+      transform: translate(3px,3px)
+      box-shadow: none
+
+
+
+/* Preloader */
+.preloader
+  display: none
+  opacity: 0
+  position: absolute
+  bottom: -39px
+  left: 50%
+  margin-left: -32px
+
+  &__ellipsis
+    display: inline-block
+    position: relative
+    width: 64px
+    height: 12px
+    & div
+      position: absolute
+      top: 0
+      width: 11px
+      height: 11px
+      border-radius: 50%
+      background: #236E89
+      animation-timing-function: cubic-bezier(0, 1, 1, 0)
+    & div:nth-child(1)
+      left: 6px
+      animation: preloader-ellipsis1 0.6s infinite
+    & div:nth-child(2)
+      left: 6px
+      animation: preloader-ellipsis2 0.6s infinite
+    & div:nth-child(3)
+      left: 26px
+      animation: preloader-ellipsis2 0.6s infinite
+    & div:nth-child(4)
+      left: 45px
+      animation: preloader-ellipsis3 0.6s infinite
+
+  @keyframes preloader-ellipsis1
+    0%
+      transform: scale(0)
+
+    100%
+      transform: scale(1)
+
+  @keyframes preloader-ellipsis3
+    0%
+      transform: scale(1)
+
+    100%
+      transform: scale(0)
+
+  @keyframes preloader-ellipsis2
+    0%
+      transform: translate(0, 0)
+
+    100%
+      transform: translate(19px, 0)
+
+
+
+/* Back-top btn */
+.back-top
+  display: none
+  color: #fff
+  height: 45px
+  width: 45px
+  position: fixed
+  right: 15px
+  bottom: 15px
+  text-align: center
+  font-size: 20px
+  cursor: pointer
+  background: #236E89
+  transform: scale(1)
+  transition: .3s ease-in-out
+  z-index: 10
+  border-radius: 50%
+  &:after
+    content: ''
+    display: block
+    width: 14px
+    height: 11px
+    margin: 0 auto
+    position: relative
+    top: 16px
+    background-image: url("data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDI4NC45MjkgMjg0LjkyOSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjg0LjkyOSAyODQuOTI5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTI4Mi4wODIsMTk1LjI4NUwxNDkuMDI4LDYyLjI0Yy0xLjkwMS0xLjkwMy00LjA4OC0yLjg1Ni02LjU2Mi0yLjg1NnMtNC42NjUsMC45NTMtNi41NjcsMi44NTZMMi44NTYsMTk1LjI4NSAgIEMwLjk1LDE5Ny4xOTEsMCwxOTkuMzc4LDAsMjAxLjg1M2MwLDIuNDc0LDAuOTUzLDQuNjY0LDIuODU2LDYuNTY2bDE0LjI3MiwxNC4yNzFjMS45MDMsMS45MDMsNC4wOTMsMi44NTQsNi41NjcsMi44NTQgICBjMi40NzQsMCw0LjY2NC0wLjk1MSw2LjU2Ny0yLjg1NGwxMTIuMjA0LTExMi4yMDJsMTEyLjIwOCwxMTIuMjA5YzEuOTAyLDEuOTAzLDQuMDkzLDIuODQ4LDYuNTYzLDIuODQ4ICAgYzIuNDc4LDAsNC42NjgtMC45NTEsNi41Ny0yLjg0OGwxNC4yNzQtMTQuMjc3YzEuOTAyLTEuOTAyLDIuODQ3LTQuMDkzLDIuODQ3LTYuNTY2ICAgQzI4NC45MjksMTk5LjM3OCwyODMuOTg0LDE5Ny4xODgsMjgyLjA4MiwxOTUuMjg1eiIgZmlsbD0iI0ZGRkZGRiIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=")
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+  &:hover
+    background: #1C5A6F
+    color: #fff
+  &_hide
+    visibility: hidden
+    transform: scale(0.5)
